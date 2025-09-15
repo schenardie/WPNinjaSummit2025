@@ -1,0 +1,8 @@
+Policy Type: Custom
+
+1 Setting
+
+Name: MCC Account Creation
+Description:""
+OMA-URI: ./Device/Vendor/MSFT/Accounts/Users/ACCOUNTNAME/Password where "ACCOUNTNAME" should be the account you want to create locally.
+Value: PASSWORD VALUE for the account create. Example "stalls-steele-mirror-envy"

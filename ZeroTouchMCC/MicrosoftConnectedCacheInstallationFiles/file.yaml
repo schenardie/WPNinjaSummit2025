@@ -1,0 +1,24 @@
+application:
+    appName: "Microsoft Connected Cache"
+    publisher: "Microsoft"
+    description: "Deploy Microsoft Connected Cache installation files"
+    appUrl: ""
+    appFile: ""
+    unpack: false
+    installFile: "Install.ps1"  
+    installCmdLine: "powershell.exe -executionPolicy bypass -file \"./Install.ps1\" -Mode Install"
+    uninstallCmdLine: "powershell.exe -executionPolicy bypass -file \"./Install.ps1\" -Mode Uninstall"
+    runAsAccount: "system"
+    roleScopeTagIds: "0"
+    notes: "Devicie Builtin"
+requirements:
+    #Arhitecture = x64 x86
+    OSArch: x64
+    #Minimum OS Version =  "v10_1607" "v10_1703" "v10_1709" "v10_1803" "v10_1809" "v10_1903"
+    minOSVer: "v10_1903"
+detection:
+    -   psdetection:
+            ScriptFile: "detect.ps1"
+            enforceSignatureCheck: false
+            runAs32Bit: false
+clients: "devicie.com"

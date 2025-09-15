@@ -1,0 +1,1 @@
+Downlaod last version from https://github.com/microsoft/WSL/releases/latest and change file.yaml and detect.ps1 to match the latest version.

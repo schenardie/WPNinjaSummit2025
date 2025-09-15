@@ -1,0 +1,1 @@
+Download the current msix from https://aka.ms/do-mcc-ent-windows-x64

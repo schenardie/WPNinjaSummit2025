@@ -1,0 +1,20 @@
+application:
+    appName: "Microsoft Connected Cache Optional Features"
+    publisher: "Microsoft"
+    description: "Enable Windows Virtual Machine Platform and Hyper-v Features"
+    unpack: false
+    installFile: "Install.ps1"  
+    installCmdLine: "powershell.exe -ExecutionPolicy Bypass -Command \"& { ./Install.ps1 -Mode Install; exit $LASTEXITCODE }\""
+    uninstallCmdLine: "powershell.exe -ExecutionPolicy Bypass -Command \"& { ./Install.ps1 -Mode Uninstall; exit $LASTEXITCODE }\""
+    runAsAccount: "system"
+    roleScopeTagIds: "0"
+
+requirements:
+    OSArch: x64
+    minOSVer: "v10_1903"
+    
+detection:
+    -   psdetection:
+            ScriptFile: "detect.ps1"
+            enforceSignatureCheck: false
+            runAs32Bit: false

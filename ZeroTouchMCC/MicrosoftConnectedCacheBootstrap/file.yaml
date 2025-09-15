@@ -1,0 +1,23 @@
+application:
+    appName: "Microsoft Connected Cache Bootstrap"
+    publisher: "Microsoft"
+    description: "Deploy Microsoft Connected Cached WSL based passing all the parameters via Intune (CLEAR TEXT)"
+    appUrl: ""
+    appFile: ""
+    installFile: "Install.ps1"
+    installCmdLine: "%windir%\\sysnative\\windowspowershell\\v1.0\\powershell.exe -executionPolicy bypass -windowstyle hidden -file .\\Install.ps1 -installationFolder c:/mcc -customerid GUID -cachenodeid GUID -customerkey GUID -registrationkey GUID -cacheDrives /var/mcc,100 -mccLocalAccountUser ACCOUNTNAME -mccLocalAccountPassword ACCOUNTPASSWORD"
+    uninstallCmdLine: "uninstallcmdline"
+    runAsAccount: "system"
+    roleScopeTagIds: "0"
+    
+detection:
+     -   FileDetection:
+             path: "%systemdrive%\\MCC"
+             fileOrFolderName: "wslip.txt"
+             check32BitRegOn64System: false
+             detectionType: "exists"
+             operator: "notConfigured"
+             
+requirements:
+    OSArch: x64
+    minOSVer: "v10_1903" 

@@ -1,0 +1,20 @@
+﻿application:
+    appname: "Windows Subsystem for Linux X.X.X"
+    publisher: "Microsoft Corporation"
+    description: "Windows Subsystem for Linux is a feature of Windows that allows developers to run a Linux environment without the need for a separate virtual machine or dual booting."
+    unpack: false
+    installFile: "wsl.X.X.X.X.x64.msi"
+    installCmdLine: "msiexec /i wsl.X.X.X.X.x64.msi /qn /l*v C:\ProgramData\MCC\Logs\wsl_Install.log"
+    uninstallCmdLine: "msiexec /x "{GUID}" /qn"
+    runAsAccount: "system"
+    roleScopeTagIds: "0"
+    
+requirements:
+    OSArch: x64
+    minOSVer: "v10_1903"
+    
+detection:
+    -   psdetection:
+            ScriptFile: "detect.ps1"
+            enforceSignatureCheck: false
+            runAs32Bit: false
